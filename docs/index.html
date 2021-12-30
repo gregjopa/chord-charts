@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <title>Chord Charts</title>
+        <link rel="stylesheet" href="index.css">
+        <style>
+            body {
+                background-color: #293132;
+                color: #f4f4f4;
+                font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+            }
+            #songs {
+                margin: 10px;
+                min-width: 300px;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <select name="songs" id="songs">
+            <option value="" disabled selected>Select a song</option>
+            <option value="glorious-day">Glorious Day</option>
+            <option value="how-great-thou-art">How Great Thou Art</option>
+        </select>
+
+        <div id="chord-chart-preview" class="cmTheme-dark1"></div>
+
+        <script src="https://unpkg.com/chord-mark@0.10.0-beta.5/lib/chord-mark.js"></script>
+
+        <script type="module">
+            const { parseSong, renderSong } = window["chord-mark"];
+
+            document.querySelector("#songs").addEventListener("change", function () {
+                import(`./songs/${this.value}.js`).then((song) => {
+                    const container = document.querySelector("#chord-chart-preview");
+
+                    const parsed = parseSong(song.default);
+                    const rendered = renderSong(parsed);
+
+                    container.innerHTML = rendered;
+                });
+            });
+        </script>
+    </body>
+</html>
