@@ -1,7 +1,10 @@
 export default `
 4/4
 
-#verse
+#i
+D % % %
+
+#v
 D
 I was _buried beneath   my shame
 Bm7
@@ -9,7 +12,7 @@ Who could _carry that kind   of weight
 G2 D
 It was my _tomb   'til I met _You
 
-#verse
+#v
 D
 I was _breathing but not   alive
 Bm7
@@ -17,7 +20,7 @@ All my _failures I tried   to hide
 G2 D
 It was my _tomb   'til I met _You
 
-#chorus
+#c
 G2 D
 (Cause when) You called my _name (and) I ran out of that _grave
 G2 D
@@ -27,10 +30,10 @@ You called my _name (and) I ran out of that _grave
 G2 D
 Out of the _darkness into Your glorious _day
 
-#instrumental
+#u
 D % % %
 
-#verse
+#v
 D
 Now Your _mercy has saved   my soul
 Bm7
@@ -38,9 +41,9 @@ Now Your _freedom is all   that I know
 G2 D
 The old made _new   Jesus when I met _You
 
-#chorus
+#c
 
-#bridge
+#b
 
 D
 I needed rescue my sin was heavy
@@ -57,7 +60,8 @@ Now Your love is the air that I'm breathing
 Bm7 Asus
 I have a _future _my eyes are open
 
-#chorus
+#c
 
-#instrumental
+#o
+D % % %
 `.trim();

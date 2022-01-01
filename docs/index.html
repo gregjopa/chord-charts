@@ -12,11 +12,12 @@
                 background-color: #293132;
                 color: #f4f4f4;
                 font-family: SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+                margin-bottom: 20px;
             }
             #songs {
                 margin: 10px;
                 min-width: 300px;
-                font-size: 16px;
+                font-size: 18px;
             }
         </style>
     </head>
@@ -32,18 +33,8 @@
         <script src="https://unpkg.com/chord-mark@0.10.0-beta.5/lib/chord-mark.js"></script>
 
         <script type="module">
-            const { parseSong, renderSong } = window["chord-mark"];
-
-            document.querySelector("#songs").addEventListener("change", function () {
-                import(`./songs/${this.value}.js`).then((song) => {
-                    const container = document.querySelector("#chord-chart-preview");
-
-                    const parsed = parseSong(song.default);
-                    const rendered = renderSong(parsed);
-
-                    container.innerHTML = rendered;
-                });
-            });
+            import { main } from "./index.js";
+            main();
         </script>
     </body>
 </html>
