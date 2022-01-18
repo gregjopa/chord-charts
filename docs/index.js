@@ -1,4 +1,7 @@
 function getChordMark() {
+    // work around for getting access to chordMark without ES module support.
+    // in the future we'd like to use:
+    // import { parseSong, renderSong } from "https://unpkg.com/chord-mark@0.11.0/lib/chord-mark.js";
     const globalChordMark = window["chord-mark"];
 
     if (!globalChordMark) {
@@ -18,12 +21,12 @@ function addEventListeners() {
             url.searchParams.set("song-name", songName);
             window.history.pushState(null, null, url.toString());
 
-            renderSong(song.default);
+            renderSelectedSong(song.default);
         });
     });
 }
 
-function renderSong(song) {
+function renderSelectedSong(song) {
     const container = document.querySelector("#chord-chart-preview");
     if (!container) {
         throw new Error("Failed to find the song container in the DOM");
@@ -60,7 +63,7 @@ export function main() {
         document.querySelector("#songs").value = songName;
 
         import(`./songs/${songName}.js`).then((song) => {
-            renderSong(song.default);
+            renderSelectedSong(song.default);
         });
     }
 }
