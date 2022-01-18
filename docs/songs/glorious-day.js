@@ -2,15 +2,15 @@ export default `
 4/4
 
 #i
-D % % %
+D %%%
 
 #v
-D
-I was _buried beneath   my shame
-Bm7
-Who could _carry that kind   of weight
-G2 D
-It was my _tomb   'til I met _You
+D %%%
+I was _buried be_neath my _shame
+Bm7 %%%
+Who could _carry that _kind   of _weight
+G2 % D %
+It was my _tomb  _'til I met _You _
 
 #v
 D
